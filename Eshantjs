@@ -1,0 +1,30 @@
+const artNFTs = [];
+
+function mintArtNFT(artist, title, medium) {
+    const NFT = {
+        artist,
+        title,
+        medium,
+    };
+    artNFTs.push(NFT);
+    console.log(`Minted ${title} by ${artist}`);
+}
+
+function listArtNFTs() {
+    for (let i = 0; i < artNFTs.length; i++) {
+        console.log(`\nArt NFT no: ${i + 1}`);
+        console.log(`Title: ${artNFTs[i].title}`);
+        console.log(`Artist: ${artNFTs[i].artist}`);
+        console.log(`Medium: ${artNFTs[i].medium}`);
+    }
+}
+
+function getTotalArtSupply() {
+    console.log(`Total art NFTs minted: ${artNFTs.length}`);
+}
+
+// Example usage:
+mintArtNFT("Pablo Picasso", "Guernica", "Oil on canvas");
+mintArtNFT("Banksy", "Girl with a Balloon", "Street art");
+listArtNFTs();
+getTotalArtSupply();
